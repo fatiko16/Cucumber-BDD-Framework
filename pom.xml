@@ -7,17 +7,42 @@
     <groupId>org.fatiko</groupId>
     <artifactId>FrameworkLayout</artifactId>
     <version>1.0-SNAPSHOT</version>
-<!--dependencies tag is needed for handling our dependencies, it is easy to add a dependency or
-control versions of dependencies in this way-->
+    <!--dependencies tag is needed for handling our dependencies, it is easy to add a dependency or
+    control versions of dependencies in this way-->
     <dependencies>
+
+        <!--        This dependency is needed to add Selenium to our project-->
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>3.141.59</version>
+        </dependency>
+
+        <!--        To automatically and easily set drivers-->
+        <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>4.3.1</version>
+        </dependency>
+
+        <!--        To use java faker library to generate fake data-->
+        <!-- https://mvnrepository.com/artifact/com.github.javafaker/javafaker -->
+        <dependency>
+            <groupId>com.github.javafaker</groupId>
+            <artifactId>javafaker</artifactId>
+            <version>1.0.2</version>
+        </dependency>
+
 
     </dependencies>
 
-<!--    To add plugin we need build and plugins tags-->
+    <!--    To add plugin we need build and plugins tags-->
     <build>
         <plugins>
-<!-- If you want to use the Java 8 language features (-source 1.8) and also want the compiled classes to be
-compatible with JVM 1.8 (-target 1.8), you can configure the plugin directly-->
+            <!-- If you want to use the Java 8 language features (-source 1.8) and also want the compiled classes to be
+            compatible with JVM 1.8 (-target 1.8), you can configure the plugin directly-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
