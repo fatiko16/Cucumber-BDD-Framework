@@ -10,7 +10,7 @@
     <!--dependencies tag is needed for handling our dependencies, it is easy to add a dependency or
     control versions of dependencies in this way-->
     <dependencies>
-
+        <!--SELENIUM-->
         <!--        This dependency is needed to add Selenium to our project-->
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
@@ -18,6 +18,8 @@
             <artifactId>selenium-java</artifactId>
             <version>3.141.59</version>
         </dependency>
+
+        <!--WEB DRIVER MANAGER-->
 
         <!--        To automatically and easily set drivers-->
         <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
@@ -27,12 +29,34 @@
             <version>4.3.1</version>
         </dependency>
 
+
+        <!--JAVA FAKER-->
         <!--        To use java faker library to generate fake data-->
         <!-- https://mvnrepository.com/artifact/com.github.javafaker/javafaker -->
         <dependency>
             <groupId>com.github.javafaker</groupId>
             <artifactId>javafaker</artifactId>
             <version>1.0.2</version>
+        </dependency>
+
+
+        <!--        CUCUMBER JAVA-->
+        <!--       TODO: Check what exactly this is-->
+        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>6.10.0</version>
+        </dependency>
+
+        <!--        CUCUMBER J-Unit-->
+        <!--       TODO: Check what exactly this is-->
+        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>6.10.0</version>
+            <scope>test</scope>
         </dependency>
 
 
@@ -52,6 +76,58 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+
+
+            <!--      Maven surefire plugin      -->
+            <!-- This plugin allows us to run our CukesRunner class using maven lifecycles.-->
+            <!-- if testFailureIgnore is true , it ignores any failure that you will get, and will continue testing ,
+            if false it will stop executing rest of the test , if you have failure
+            CukesRunner is java regex to run all CukesRunners in your project-->
+            <!--            TODO: Learn in detail and write your own notes-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M5</version>
+                <configuration>
+                    <parallel>methods</parallel>
+                    <threadCount>4</threadCount>
+                    <perCoreThreadCount>false</perCoreThreadCount>
+                    <testFailureIgnore>true</testFailureIgnore>
+                    <includes>
+                        <include>**/CukesRunner*.java</include>
+                    </includes>
+                </configuration>
+            </plugin>
+
+
+            <!--    CUCUMBER-MAVEN-REPORT   -->
+            <!--This is a plugin that allows us to generate a 3rd party reporting. -->
+            <!-- cucumber*.json after running the code will convert the cucumber.json file to something that human can understand better ,
+             will be better displayed -->
+            <!--            TODO:Learn this in detail also-->
+            <plugin>
+                <groupId>net.masterthought</groupId>
+                <artifactId>maven-cucumber-reporting</artifactId>
+                <version>5.4.0</version>
+                <executions>
+                    <execution>
+                        <id>execution</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <projectName>Cucumber HTML Reports</projectName>
+                            <outputDirectory>${project.build.directory}</outputDirectory>
+                            <inputDirectory>${project.build.directory}</inputDirectory>
+                            <jsonFiles>
+                                <param>**/cucumber*.json</param>
+                            </jsonFiles>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
         </plugins>
 
 
