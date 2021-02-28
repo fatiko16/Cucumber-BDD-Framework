@@ -5,13 +5,14 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class ConfigurationReader {
-    //Everything is static because we dont need any object of the class we just want to use one method from the class
-    //which is getProperty()
+    /*Everything is static because we dont need any object of the class we just want to use one method from the class
+    which is getProperty()
 
-    //To store properties file to an object
+    To store properties file to an object*/
     private static Properties properties = new Properties();
 
     //TODO:Learn about Properties object and FileInputStream
+
     //We are dealing with loading and reading in a static initilization block since we need these to be ready when we call our
     //static getProperty method
     static{
