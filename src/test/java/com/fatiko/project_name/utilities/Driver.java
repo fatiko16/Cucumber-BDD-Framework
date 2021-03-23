@@ -8,12 +8,10 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import java.util.concurrent.TimeUnit;
 
 public class Driver {
-    //TODO: add all the drivers
+
 
     private Driver(){}
 
-    /*TODO: First of all check what ThreadLocal is
-    TODO: Then check its methods and how we used synchronized key here*/
     private static ThreadLocal<WebDriver> driverPool = new ThreadLocal<>();
 
     public static WebDriver getDriver(){
