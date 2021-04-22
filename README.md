@@ -4,7 +4,7 @@ Cucumber BDD Framework using *Java, Maven, Junit, and Selenium*
 -----
 * [Folder Structure](#Folder-Structure) 
 * [Dependencies](#Dependencies)
-  * Selenium
+  * [Selenium](#Selenium)
   * WebDriverManager
   * Cucumber-Java
   * Cucumber-Junit
@@ -34,6 +34,23 @@ Finally, we have a configuration.properties file right under our root file.
 
 Dependencies
 ====
+Selenium
+---
+  Selenium is defined as "Selenium is an umbrella project for a range of tools and libraries that enable and support the automation of web browsers." in its [official 
+website](https://www.selenium.dev/documentation/en/). It is basically the tool we automate browsers with for test automation.
+
+WebDriver Manager
+---
+
+Normally, to use some browsers like Firefox,Safari,Chrome etc. we have to download their drivers which is 
+their binary files that let WebDriver to handle the specific browser. It is cumbersome effort, and you have
+to check new versions of driver manually. WebDriverManager can be used to make this process easier for us to
+download any kind of Driver. For example:
+```java
+  WebDriverManager.chromedriver().setup();
+  WebDriver driver = new ChromeDriver();
+```
+
 
 
 
