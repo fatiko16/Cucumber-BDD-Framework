@@ -2,6 +2,8 @@ Cucumber-BDD-Framework
 ======
 Cucumber BDD Framework using *Java, Maven, Junit, and Selenium*
 -----
+* Configuration Properties
+* Configuration Reader  
 * [Folder Structure](#Folder-Structure) 
 * [Dependencies](#Dependencies)
   * [Selenium](#Selenium)
@@ -27,6 +29,16 @@ and utilities package is used for general utility classes.
 Also under test package, there is a resources file, and under it we have our features directory for our feature files.
 
 Finally, we have a configuration.properties file right under our root file.
+
+Configuration Properties
+===
+  Configuration properties is a file where some important information that 
+can change the flow of the whole framework. Such as browser type, environment, username and
+password. It also helps us to avoid hard-coding, to change these values are easier
+as we only have to change them in one place.
+[To see the file click here](configuration.properties)
+
+
 
 Dependencies
 ====
