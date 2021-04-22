@@ -36,11 +36,27 @@ Dependencies
 ====
 Selenium
 ---
+```java
+<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>3.141.59</version>
+        </dependency>
+```
   Selenium is defined as "Selenium is an umbrella project for a range of tools and libraries that enable and support the automation of web browsers." in its [official 
 website](https://www.selenium.dev/documentation/en/). It is basically the tool we automate browsers with for test automation.
 
 WebDriver Manager
 ---
+```java
+<!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>4.3.1</version>
+        </dependency>
+```
 
 Normally, to use some browsers like Firefox,Safari,Chrome etc. we have to download their drivers which is 
 their binary files that let WebDriver to handle the specific browser. It is cumbersome effort, and you have
@@ -50,6 +66,7 @@ download any kind of Driver. For example:
   WebDriverManager.chromedriver().setup();
   WebDriver driver = new ChromeDriver();
 ```
+[For more information click here](https://github.com/bonigarcia/webdrivermanager)
 
 
 
