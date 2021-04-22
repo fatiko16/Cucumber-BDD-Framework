@@ -10,15 +10,11 @@ Cucumber BDD Framework using *Java, Maven, Junit, and Selenium*
   * [Cucumber-Junit](#Cucumber-JUnit)
   * [Java-Faker(Optional)](#Java-Faker)
 * Plugins  
-  * Maven Compiler Plugin
-  * Maven Surefire Plugin
-  * Maven Cucumber Reporting
+  * [Maven Compiler Plugin](#Maven-Compiler-Plugin)
+  * [Maven Surefire Plugin](#Maven-Surefire-Plugin)
+  * [Maven Cucumber Reporting](#Maven-Cucumber-Reporting)
   
-
-
-
-
-
+  
 Folder Structure
 ===
 Our main package takes place under test package, it should have your project name. 
@@ -109,6 +105,78 @@ Plug-Ins
 
 Maven Compiler Plugin
 ---
+  To use the java 8 features (-source 1.8) and also compile classes to be compatible with JVM 1.8 (-target 1.8).
+This plugin is needed.
+```java
+
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-compiler-plugin</artifactId>
+    <version>3.8.1</version>
+    <configuration>
+        <source>1.8</source>
+        <target>1.8</target>
+    </configuration>
+</plugin>
+
+```
+
+Maven Surefire Plugin
+---
+  This plug-in allows us to run the cukes runner class from maven lifecycle. It also allows us to run our test parallel
+using threadCount we can decide how many threads to run, also with parallel tag we can choose if we want to run methods or classes
+parallel. Finally, if testFailureIgnore is true, it will continue with tests even if one test fails, otherwise
+it will stop execution.
+```java
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M5</version>
+                <configuration>
+                    <parallel>methods</parallel>
+                    <threadCount>4</threadCount>
+                    <perCoreThreadCount>false</perCoreThreadCount>
+                    <testFailureIgnore>true</testFailureIgnore>
+                    <includes>
+                        <include>**/CukesRunner*.java</include>
+                    </includes>
+                </configuration>
+            </plugin>
+```
+
+Maven Cucumber Reporting
+---
+    This is 3rd party tool for a detailed report generation. It makes use of cucumber.json file to create the report.
+```java
+ <plugin>
+                <groupId>net.masterthought</groupId>
+                <artifactId>maven-cucumber-reporting</artifactId>
+                <version>5.4.0</version>
+                <executions>
+                    <execution>
+                        <id>execution</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <projectName>Cucumber HTML Reports</projectName>
+                            <outputDirectory>${project.build.directory}</outputDirectory>
+                            <inputDirectory>${project.build.directory}</inputDirectory>
+                            <jsonFiles>
+                                <param>**/cucumber*.json</param>
+                            </jsonFiles>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+
+
+```
+
+
 
 
 
