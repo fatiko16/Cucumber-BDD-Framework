@@ -5,10 +5,10 @@ Cucumber BDD Framework using *Java, Maven, Junit, and Selenium*
 * [Folder Structure](#Folder-Structure) 
 * [Dependencies](#Dependencies)
   * [Selenium](#Selenium)
-  * [WebDriverManager](#WebDriver Manager)
-  * [Cucumber-Java](#Cucumber Java)
-  * [Cucumber-Junit](#Cucumber JUnit)
-  * [Java-Faker(Optional)](#Java Faker)
+  * [WebDriverManager](#WebDriver-Manager)
+  * [Cucumber-Java](#Cucumber-Java)
+  * [Cucumber-Junit](#Cucumber-JUnit)
+  * [Java-Faker(Optional)](#Java-Faker)
 * Plugins  
   * Maven Compiler Plugin
   * Maven Surefire Plugin
