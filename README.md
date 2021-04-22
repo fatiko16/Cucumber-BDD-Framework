@@ -5,10 +5,10 @@ Cucumber BDD Framework using *Java, Maven, Junit, and Selenium*
 * [Folder Structure](#Folder-Structure) 
 * [Dependencies](#Dependencies)
   * [Selenium](#Selenium)
-  * WebDriverManager
-  * Cucumber-Java
-  * Cucumber-Junit
-  * Java-Faker(Optional)
+  * [WebDriverManager](#WebDriver Manager)
+  * [Cucumber-Java](#Cucumber Java)
+  * [Cucumber-Junit](#Cucumber JUnit)
+  * [Java-Faker(Optional)](#Java Faker)
 * Plugins  
   * Maven Compiler Plugin
   * Maven Surefire Plugin
@@ -67,6 +67,49 @@ download any kind of Driver. For example:
   WebDriver driver = new ChromeDriver();
 ```
 [For more information click here](https://github.com/bonigarcia/webdrivermanager)
+
+Cucumber Java
+---
+  Dependency needed to integrate Cucumber into Java.
+```java
+<dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>6.10.0</version>
+        </dependency>
+```
+Cucumber JUnit
+---
+  Dependency needed to run Cucumber with JUnit. Mostly, to
+use assertions of JUnit.
+```java
+<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>6.10.0</version>
+            <scope>test</scope>
+        </dependency>
+```
+
+Java Faker
+---
+  Dependency that is used to create all kinds of dummy data.
+
+```java
+ <dependency>
+    <groupId>com.github.javafaker</groupId>
+    <artifactId>javafaker</artifactId>
+    <version>1.0.2</version>
+</dependency>
+```
+
+Plug-Ins
+===
+
+Maven Compiler Plugin
+---
+
 
 
 
