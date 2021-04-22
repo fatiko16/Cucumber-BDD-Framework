@@ -9,7 +9,7 @@ Cucumber BDD Framework using *Java, Maven, Junit, and Selenium*
   * [Cucumber-Java](#Cucumber-Java)
   * [Cucumber-Junit](#Cucumber-JUnit)
   * [Java-Faker(Optional)](#Java-Faker)
-* Plugins  
+* [Plugins](#Plug-Ins)  
   * [Maven Compiler Plugin](#Maven-Compiler-Plugin)
   * [Maven Surefire Plugin](#Maven-Surefire-Plugin)
   * [Maven Cucumber Reporting](#Maven-Cucumber-Reporting)
