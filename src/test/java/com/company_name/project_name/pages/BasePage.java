@@ -1,6 +1,6 @@
-package com.fatiko.project_name.pages;
+package com.company_name.project_name.pages;
 
-import com.fatiko.project_name.utilities.Driver;
+import com.company_name.project_name.utilities.Driver;
 import org.openqa.selenium.support.PageFactory;
 
 public abstract class BasePage {

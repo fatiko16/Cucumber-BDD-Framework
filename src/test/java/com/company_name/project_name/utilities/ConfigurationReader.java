@@ -1,4 +1,4 @@
-package com.fatiko.project_name.utilities;
+package com.company_name.project_name.utilities;
 
 import java.io.FileInputStream;
 import java.io.IOException;

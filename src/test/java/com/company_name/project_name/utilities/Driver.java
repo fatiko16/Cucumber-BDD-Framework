@@ -1,4 +1,4 @@
-package com.fatiko.project_name.utilities;
+package com.company_name.project_name.utilities;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
