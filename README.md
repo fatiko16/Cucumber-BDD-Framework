@@ -2,7 +2,7 @@ Cucumber-BDD-Framework
 ======
 Cucumber BDD Framework using *Java, Maven, Junit, and Selenium*
 -----
-* Configuration Properties
+* [Configuration Properties](#Configuration-Properties)
 * Configuration Reader  
 * [Folder Structure](#Folder-Structure) 
 * [Dependencies](#Dependencies)
@@ -32,12 +32,17 @@ Finally, we have a configuration.properties file right under our root file.
 
 Configuration Properties
 ===
-  Configuration properties is a file where some important information that 
+  Configuration properties is a file where we store some important information that 
 can change the flow of the whole framework. Such as browser type, environment, username and
 password. It also helps us to avoid hard-coding, to change these values are easier
-as we only have to change them in one place.
+as we only have to change them in one place. 
 [To see the file click here](configuration.properties)
 
+Configuration Reader
+===
+  Configuration Reader is an utility class that we use to read data from [configuration.properties](#Configuration-Properties) file.
+It has a private Properties object we load all the data from configuration.properties file, and we can get
+this data using public getProperty method.
 
 
 Dependencies
