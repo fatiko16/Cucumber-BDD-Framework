@@ -2,7 +2,7 @@ Cucumber-BDD-Framework
 ======
 Cucumber BDD Framework using *Java, Maven, Junit, and Selenium*
 -----
-* Features File
+* [Features File](#Features)
 * [Configuration Properties](#Configuration-Properties)
 * [Configuration Reader](#Configuration-Reader)  
 * [Folder Structure](#Folder-Structure) 
@@ -17,13 +17,6 @@ Cucumber BDD Framework using *Java, Maven, Junit, and Selenium*
   * [Maven Surefire Plugin](#Maven-Surefire-Plugin)
   * [Maven Cucumber Reporting](#Maven-Cucumber-Reporting)
   
-Features
-===
-  Feature files are used to write our test cases like scenarios from real life. This is what makes 
-our project Behaviour Driven. On top of using this file to write and read our test cases for automation, also non-technical people can
-understand what we are testing. It uses [Gherkin language](https://cucumber.io/docs/guides/overview/#what-is-gherkin) which makes plain test structured enough for cucumber
-to understand. [Link for the reference](https://cucumber.io/docs/gherkin/reference/) from official website. In this project,
-features files are located in test/resources/features. To see the example [click here.](src/test/resources/features/userstory1.feature) 
  
 Folder Structure
 ===
@@ -37,6 +30,23 @@ and utilities package is used for general utility classes.
 Also under test package, there is a resources file, and under it we have our features directory for our feature files.
 
 Finally, we have a configuration.properties file right under our root file.
+
+Features
+===
+Feature files are used to write our test cases like scenarios from real life. This is what makes
+our project Behaviour Driven. On top of using this file to write and read our test cases for automation, also non-technical people can
+understand what we are testing. We need to provide path of these files in our [cukes runner class](src/test/java/com/company_name/project_name/runners/CukesRunner.java) 
+for our framework to read test cases from these files. It is done by features keyword inside @CucumberOptions tag. 
+It uses [Gherkin language](https://cucumber.io/docs/guides/overview/#what-is-gherkin) which makes plain test structured enough for cucumber
+to understand. [Link for the reference](https://cucumber.io/docs/gherkin/reference/) from official website. In this project,
+features files are located in test/resources/features. To see the example [click here.](src/test/resources/features/userstory1.feature)
+
+Step Definitions
+===
+  [Step Defintions](src/test/java/com/company_name/project_name/step_definitions) is the package where we write our java code to
+implement selenium logic. We have to implement all scenarios from our feature files otherwise it will give an error. 
+The framework uses runners class to run these implementation, we need to provide path of this file in our [cukes runner class](src/test/java/com/company_name/project_name/runners/CukesRunner.java)
+.This is done by using glue keyword inside @CucumberOptions tag.
 
 Configuration Properties
 ===
