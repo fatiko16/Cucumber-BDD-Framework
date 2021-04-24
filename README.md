@@ -3,6 +3,8 @@ Cucumber-BDD-Framework
 Cucumber BDD Framework using *Java, Maven, Junit, and Selenium*
 -----
 * [Features File](#Features)
+* [Step Definitions](#Step-Definitions)  
+* [Pages](#Pages)  
 * [Configuration Properties](#Configuration-Properties)
 * [Configuration Reader](#Configuration-Reader)  
 * [Folder Structure](#Folder-Structure) 
@@ -45,8 +47,22 @@ Step Definitions
 ===
   [Step Defintions](src/test/java/com/company_name/project_name/step_definitions) is the package where we write our java code to
 implement selenium logic. We have to implement all scenarios from our feature files otherwise it will give an error. 
-The framework uses runners class to run these implementation, we need to provide path of this file in our [cukes runner class](src/test/java/com/company_name/project_name/runners/CukesRunner.java)
+The framework uses runner classes to run these implementation, we need to provide path of this file in our [cukes runner class](src/test/java/com/company_name/project_name/runners/CukesRunner.java)
 .This is done by using glue keyword inside @CucumberOptions tag.
+
+Pages
+===
+  The framework implements page object model to locate elements, and implement some useful methods about
+elements. Page object model is a design pattern that helps to organize located web elements and avoid code
+repetition. It uses PageFactory.initElements() method to initialize web elements with the driver. Base Page
+class is used to avoid initializing elements in each page class, and locate common elements that exist all 
+pages of an application in one place. Each page class is recommended to extend Base Page class. Otherwise,
+also these classes need to call initElements method in their constructor.
+[Check the code from here](src/test/java/com/company_name/project_name/pages/BasePage.java)
+For more information about page object design pattern:
+  [Selenium official website](https://www.selenium.dev/documentation/en/guidelines_and_recommendations/page_object_models/)
+  [Guru99](https://www.guru99.com/page-object-model-pom-page-factory-in-selenium-ultimate-guide.html)
+
 
 Configuration Properties
 ===
