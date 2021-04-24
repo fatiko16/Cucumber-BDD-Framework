@@ -3,7 +3,7 @@ Cucumber-BDD-Framework
 Cucumber BDD Framework using *Java, Maven, Junit, and Selenium*
 -----
 * [Configuration Properties](#Configuration-Properties)
-* Configuration Reader  
+* [Configuration Reader](#Configuration-Reader)  
 * [Folder Structure](#Folder-Structure) 
 * [Dependencies](#Dependencies)
   * [Selenium](#Selenium)
