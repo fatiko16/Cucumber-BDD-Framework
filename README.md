@@ -60,8 +60,8 @@ pages of an application in one place. Each page class is recommended to extend B
 also these classes need to call initElements method in their constructor.
 [Check the code from here](src/test/java/com/company_name/project_name/pages/BasePage.java)
 For more information about page object design pattern:
-  [Selenium official website](https://www.selenium.dev/documentation/en/guidelines_and_recommendations/page_object_models/)
-  [Guru99](https://www.guru99.com/page-object-model-pom-page-factory-in-selenium-ultimate-guide.html)
+ * [Selenium official website](https://www.selenium.dev/documentation/en/guidelines_and_recommendations/page_object_models/)
+ * [Guru99](https://www.guru99.com/page-object-model-pom-page-factory-in-selenium-ultimate-guide.html)
 
 
 Configuration Properties
