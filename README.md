@@ -2,6 +2,7 @@ Cucumber-BDD-Framework
 ======
 Cucumber BDD Framework using *Java, Maven, Junit, and Selenium*
 -----
+* Features File
 * [Configuration Properties](#Configuration-Properties)
 * [Configuration Reader](#Configuration-Reader)  
 * [Folder Structure](#Folder-Structure) 
@@ -16,7 +17,14 @@ Cucumber BDD Framework using *Java, Maven, Junit, and Selenium*
   * [Maven Surefire Plugin](#Maven-Surefire-Plugin)
   * [Maven Cucumber Reporting](#Maven-Cucumber-Reporting)
   
-  
+Features
+===
+  Feature files are used to write our test cases like scenarios from real life. This is what makes 
+our project Behaviour Driven. On top of using this file to write and read our test cases for automation, also non-technical people can
+understand what we are testing. It uses [Gherkin language](https://cucumber.io/docs/guides/overview/#what-is-gherkin) which makes plain test structured enough for cucumber
+to understand. [Link for the reference](https://cucumber.io/docs/gherkin/reference/) from official website. In this project,
+features files are located in test/resources/features. To see the example [click here.](src/test/resources/features/userstory1.feature) 
+ 
 Folder Structure
 ===
 Our main package takes place under test package, it should have your project name. 
