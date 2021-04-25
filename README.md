@@ -20,7 +20,7 @@ Cucumber BDD Framework using *Java, Maven, Junit, and Selenium*
   * [Maven Compiler Plugin](#Maven-Compiler-Plugin)
   * [Maven Surefire Plugin](#Maven-Surefire-Plugin)
   * [Maven Cucumber Reporting](#Maven-Cucumber-Reporting)
-  
+* [Extra Resources](#Extra-Resources)  
  
 Folder Structure
 ===
@@ -90,9 +90,72 @@ cases in that file.
 Driver
 ===
   The framework implements singleton design pattern to create and call the driver.
-Singleton allows framework to only have one instance for one session. The framework makes
-use of ThreadLocal for parallel test execution.
+Singleton allows framework to only have one instance for one session.If parallel execution is not an issue driver
+can be simply :
+```java
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.util.concurrent.TimeUnit;
+
+public class Driver {
+
+    private Driver(){
+    }
+
+    private static WebDriver driver;
+
+    public static WebDriver getDriver(){
+
+        if(driver == null){
+            String browser = ConfigurationReader.getProperty("browser");
+
+            switch (browser){
+                case "chrome":
+                    WebDriverManager.chromedriver().setup();
+                    driver =  new ChromeDriver();
+                    driver.manage().window().maximize();
+                    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    break;
+                case"firefox":
+                    WebDriverManager.firefoxdriver().setup();
+                    driver = new FirefoxDriver();
+                    driver.manage().window().maximize();
+                    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    break;
+                default:
+                    WebDriverManager.chromedriver().setup();
+                    driver = new ChromeDriver();
+                    driver.manage().window().maximize();
+                    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            }
+        }
+
+        return driver;
+
+
+    }
+
+    public static void closeDriver(){
+        if(driver!=null){
+            driver.quit();
+            driver = null;
+        }
+    }
+
+
+}
+
+
+
+
+```
+  The framework makes use of ThreadLocal for parallel execution together with singleton design pattern. Normally,
+singleton allows creation of only one instance, but with ThreadLocal, it is allowed to create one instance 
+for each thread we are running.
+* [Check the code from here](src/test/java/com/company_name/project_name/utilities/Driver.java)
 
 
 Configuration Properties
@@ -257,7 +320,11 @@ Maven Cucumber Reporting
 
 
 ```
-
+Extra Resources
+===
+  * [Cucumber](https://cucumber.io/docs/cucumber/api/)
+  * [Page Object Model](https://www.guru99.com/page-object-model-pom-page-factory-in-selenium-ultimate-guide.html)
+  
 
 
 
