@@ -90,10 +90,8 @@ cases in that file.
 Driver
 ===
   The framework implements singleton design pattern to create and call the driver.
-Singleton allows framework to only have one instance for one session.
-    
-
-More information will be added to this part. 
+Singleton allows framework to only have one instance for one session. The framework makes
+use of ThreadLocal for parallel test execution.
 
 
 
