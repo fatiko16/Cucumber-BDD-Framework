@@ -5,7 +5,8 @@ Cucumber BDD Framework using *Java, Maven, Junit, and Selenium*
 * [Features File](#Features)
 * [Step Definitions](#Step-Definitions)  
 * [Pages](#Pages)  
-* [Runners](#Runners)  
+* [Runners](#Runners)
+* [Driver](#Driver) 
 * [Configuration Properties](#Configuration-Properties)
 * [Configuration Reader](#Configuration-Reader)  
 * [Folder Structure](#Folder-Structure) 
@@ -78,7 +79,21 @@ is provided through glue keyword. Path of the feature files is provided by featu
 We can check if our step definitions implemented all the scenarios from feature files 
 using dryRun keyword, if it is true, it only makes a check, does not run the actual cod.
 Finally, tags are used to choose which test suites to run.
+  * [Check the main cukes runner from here](src/test/java/com/company_name/project_name/runners/CukesRunner.java)
+    
+FailedTestRunner class is used to run only failed test cases, path of the step definitions
+need to be provided with rerun.txt for features since our main cukes runner stores failed test 
+cases in that file.
+  * [Check the failed test runner from here](src/test/java/com/company_name/project_name/runners/FailedTestRunner.java)
 
+
+Driver
+===
+  The framework implements singleton design pattern to create and call the driver.
+Singleton allows framework to only have one instance for one session.
+    
+
+More information will be added to this part. 
 
 
 
