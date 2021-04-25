@@ -5,6 +5,7 @@ Cucumber BDD Framework using *Java, Maven, Junit, and Selenium*
 * [Features File](#Features)
 * [Step Definitions](#Step-Definitions)  
 * [Pages](#Pages)  
+* [Runners](#Runners)  
 * [Configuration Properties](#Configuration-Properties)
 * [Configuration Reader](#Configuration-Reader)  
 * [Folder Structure](#Folder-Structure) 
@@ -62,6 +63,23 @@ also these classes need to call initElements method in their constructor.
 For more information about page object design pattern:
  * [Selenium official website](https://www.selenium.dev/documentation/en/guidelines_and_recommendations/page_object_models/)
  * [Guru99](https://www.guru99.com/page-object-model-pom-page-factory-in-selenium-ultimate-guide.html)
+
+Runners
+===
+  Cucumber is launched by running JUnit, and it is possible to configure 
+how to run the framework. To run our scenarios we need [cucumber-junit dependency](#Cucumber-JUnit)
+in our pom.xml. We need to add @RunWith(Cucumber.class) annotation. Then we can
+add our configurations inside @CucumberOptions tag. In this framework, we have 
+html, json, and rerun for our plugin configuration. Html is provided to create 
+built-in html report, json is used for [maven cucumber reporting](#Maven-Cucumber-Reporting) 
+to generate a detailed report, rerun plugin is used to save failed test cases
+in a txt file so later we can run these tests seperately. Path of the step definitions 
+is provided through glue keyword. Path of the feature files is provided by features keyword. 
+We can check if our step definitions implemented all the scenarios from feature files 
+using dryRun keyword, if it is true, it only makes a check, does not run the actual cod.
+Finally, tags are used to choose which test suites to run.
+
+
 
 
 Configuration Properties
