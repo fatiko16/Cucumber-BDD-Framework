@@ -3,7 +3,8 @@ Cucumber-BDD-Framework
 Cucumber BDD Framework using *Java, Maven, Junit, and Selenium*
 -----
 * [Features File](#Features)
-* [Step Definitions](#Step-Definitions)  
+* [Step Definitions](#Step-Definitions)
+* [Hooks](#Hooks) 
 * [Pages](#Pages)  
 * [Runners](#Runners)
 * [Driver](#Driver) 
@@ -51,6 +52,16 @@ Step Definitions
 implement selenium logic. We have to implement all scenarios from our feature files otherwise it will give an error. 
 The framework uses runner classes to run these implementation, we need to provide path of this file in our [cukes runner class](src/test/java/com/company_name/project_name/runners/CukesRunner.java)
 .This is done by using glue keyword inside @CucumberOptions tag.
+
+Hooks
+===
+  Hooks class is used to provide precondition, and cleaning for our tests. It uses @Before @BeforeStep and @After
+@AfterStep annotations for providing these conditions. @Before and @After runs before and after each scenario
+  . @BeforeStep and @AfterStep runs before and after each step in our feature files.In this layout, the most important part in this class is
+@After annotation since with the cod implemented there, the framework takes a screenshot and attach it to scenario 
+whenever our test cases fail.
+
+* [Check the code frome here](src/test/java/com/company_name/project_name/step_definitions/Hooks.java)
 
 Pages
 ===
